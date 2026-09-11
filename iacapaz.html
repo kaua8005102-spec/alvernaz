@@ -1,202 +1,262 @@
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA e Notícias Falsas</title>
+
+    <title>Meu Site</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f2f2f2;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #20232a;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #080b18, #101d3d, #061a35);
             color: white;
-            text-align: center;
-            padding: 35px;
+            display: flex;
+            flex-direction: column;
         }
 
-        header h1 {
-            margin: 0;
+        /* MENU */
+        nav {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4da6ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #4da6ff;
+        }
+
+        /* CONTEÚDO */
+        .principal {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .conteudo {
+            max-width: 850px;
+        }
+
+        .icone {
+            font-size: 70px;
+            margin-bottom: 15px;
+            animation: flutuar 3s infinite ease-in-out;
+        }
+
+        @keyframes flutuar {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #4da6ff;
+        }
+
+        .subtitulo {
+            font-size: 22px;
+            color: #d7e6ff;
+            margin-bottom: 20px;
+        }
+
+        .descricao {
+            font-size: 17px;
+            color: #b9c7dc;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        /* BOTÃO */
+        .botao-ia {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 17px 28px;
+            background: linear-gradient(135deg, #0066ff, #8a2be2);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.4);
+            transition: 0.3s ease;
+        }
+
+        .botao-ia:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 0 40px rgba(80, 120, 255, 0.7);
+        }
+
+        .botao-ia .emoji {
             font-size: 35px;
         }
 
-        header p {
+        .texto-botao {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .texto-botao strong {
             font-size: 18px;
+            letter-spacing: 1px;
         }
 
-        main {
-            width: 80%;
-            max-width: 950px;
-            margin: 30px auto;
+        .texto-botao small {
+            font-size: 13px;
+            margin-top: 4px;
+            color: #dce8ff;
         }
 
-        .introducao, .questao {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-        }
-
-        h2 {
-            color: #0066cc;
-        }
-
-        .questao h2 {
-            font-size: 22px;
-        }
-
-        p {
-            font-size: 17px;
-        }
-
+        /* RODAPÉ */
         footer {
-            background-color: #20232a;
-            color: white;
             text-align: center;
-            padding: 18px;
-            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #aebbd0;
+            font-size: 14px;
+        }
+
+        /* CELULAR */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitulo {
+                font-size: 19px;
+            }
+
+            .descricao {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>🤖 IA e as Notícias Falsas</h1>
-        <p>A inteligência artificial é capaz de detectar Fake News?</p>
-    </header>
+    <!-- MENU -->
+    <nav>
 
-    <main>
+        <div class="logo">
+            Meu Site
+        </div>
 
-        <section class="introducao">
-            <h2>📢 Introdução</h2>
+        <div>
+            <a href="#">Início</a>
+            <a href="ia-fake-news.html">IA e Fake News</a>
+        </div>
 
-            <p>
-                A inteligência artificial está cada vez mais presente na internet
-                e pode ser usada tanto para criar quanto para identificar conteúdos
-                falsos. Atualmente, existem ferramentas capazes de produzir textos,
-                imagens, áudios e vídeos que parecem verdadeiros, mesmo quando não são.
+    </nav>
+
+
+    <!-- PARTE PRINCIPAL -->
+    <main class="principal">
+
+        <div class="conteudo">
+
+            <div class="icone">
+                🤖
+            </div>
+
+            <h1>
+                Bem-vindo ao <span>meu site!</span>
+            </h1>
+
+            <p class="subtitulo">
+                Tecnologia, inteligência artificial e informação
             </p>
 
-            <p>
-                Por isso, é importante entender como a inteligência artificial pode
-                contribuir para o aumento das Fake News e também como pode ajudar no
-                combate à desinformação. Mesmo utilizando IA, é importante conferir
-                as informações em fontes confiáveis antes de acreditar ou compartilhar
-                uma notícia.
-            </p>
-        </section>
-
-
-        <section class="questao">
-            <h2>1. Qual é o impacto das IAs na geração de conteúdos falsos?</h2>
-
-            <p>
-                A inteligência artificial pode facilitar bastante a criação de
-                conteúdos falsos. Com algumas ferramentas, uma pessoa consegue
-                produzir textos, imagens, vídeos e até áudios falsos de forma
-                rápida e muito realista.
+            <p class="descricao">
+                Descubra como a inteligência artificial está mudando a
+                internet e entenda como ela pode ser usada tanto para
+                criar conteúdos falsos quanto para ajudar a combater
+                as Fake News.
             </p>
 
-            <p>
-                Isso pode ser um problema porque algumas pessoas podem acreditar
-                nesses conteúdos sem verificar se eles são verdadeiros. As Fake
-                News podem se espalhar rapidamente pelas redes sociais, causando
-                confusão, prejudicando pessoas e empresas e até influenciando a
-                opinião da população.
-            </p>
 
-            <p>
-                Por isso, quanto mais avançadas ficam as ferramentas de IA,
-                maior também é a necessidade de verificar a origem das informações
-                antes de compartilhá-las.
-            </p>
-        </section>
+            <!-- BOTÃO PARA O SITE DE IA -->
+            <a href="ia-fake-news.html" class="botao-ia">
 
+                <span class="emoji">🤖</span>
 
-        <section class="questao">
-            <h2>2. Como as IAs podem ser usadas no combate aos conteúdos falsos?</h2>
+                <div class="texto-botao">
 
-            <p>
-                A inteligência artificial também pode ser usada para combater
-                as Fake News. Ela consegue analisar grandes quantidades de
-                informações em pouco tempo e procurar sinais que indiquem que
-                determinado conteúdo pode ser falso ou manipulado.
-            </p>
+                    <strong>IA & FAKE NEWS</strong>
 
-            <p>
-                Por exemplo, uma IA pode comparar uma notícia com informações
-                encontradas em fontes confiáveis, analisar imagens e identificar
-                possíveis alterações em vídeos ou áudios. Ela também pode ajudar
-                plataformas da internet a encontrar conteúdos suspeitos com mais
-                rapidez.
-            </p>
+                    <small>
+                        Clique para entrar no site →
+                    </small>
 
-            <p>
-                Porém, a IA não é perfeita. Por isso, mesmo quando uma ferramenta
-                aponta que uma notícia pode ser falsa, é importante que as pessoas
-                também procurem informações em sites confiáveis e verifiquem a
-                origem da notícia.
-            </p>
-        </section>
+                </div>
 
+            </a>
 
-        <section class="questao">
-            <h2>3. O que são Fake News?</h2>
-
-            <p>
-                Fake News são informações falsas ou enganosas que são apresentadas
-                como se fossem verdadeiras. Elas podem aparecer em forma de textos,
-                imagens, vídeos, áudios ou publicações nas redes sociais.
-            </p>
-
-            <p>
-                Muitas Fake News são criadas com a intenção de enganar as pessoas,
-                causar medo, gerar confusão ou influenciar a opinião de alguém.
-                Outras podem surgir simplesmente porque uma pessoa compartilhou
-                uma informação sem verificar se ela era verdadeira.
-            </p>
-
-            <p>
-                Para evitar cair em Fake News, é importante verificar quem publicou
-                a informação, procurar a mesma notícia em outras fontes confiáveis,
-                observar a data da publicação e desconfiar de conteúdos que tentam
-                provocar uma reação muito forte antes de apresentar provas.
-            </p>
-        </section>
-
-
-        <section class="introducao">
-            <h2>🔎 Conclusão</h2>
-
-            <p>
-                A inteligência artificial pode ser usada tanto para criar conteúdos
-                falsos quanto para ajudar a identificá-los. Por isso, ela pode ser
-                uma ferramenta importante no combate à desinformação, mas não deve
-                substituir a atenção e o senso crítico das pessoas.
-            </p>
-
-            <p>
-                Antes de compartilhar uma notícia, é importante parar, pesquisar e
-                confirmar se a informação realmente é verdadeira. Dessa forma,
-                podemos ajudar a diminuir a circulação de Fake News na internet.
-            </p>
-        </section>
+        </div>
 
     </main>
 
+
+    <!-- RODAPÉ -->
     <footer>
-        <p>Projeto escolar — Inteligência Artificial e Fake News</p>
+
+        <p>
+            Projeto escolar — Tecnologia e Inteligência Artificial
+        </p>
+
     </footer>
 
 </body>
+
 </html>
 ```
