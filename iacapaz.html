@@ -6,79 +6,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meu Site</title>
+    <title>IA é capaz de detectar Fake News?</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #080b18, #101d3d, #061a35);
+            background: #070b18;
             color: white;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.6;
         }
 
         /* MENU */
+
         nav {
-            width: 100%;
-            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(10px);
+
+            padding: 18px 7%;
+
+            background: rgba(5, 8, 20, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #26365f;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 23px;
             font-weight: bold;
-            color: #4da6ff;
+            color: #55aaff;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 25px;
-            font-size: 16px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #4da6ff;
+            color: #55aaff;
         }
 
-        /* CONTEÚDO */
-        .principal {
-            flex: 1;
+        /* CAPA */
+
+        .hero {
+            min-height: 90vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             text-align: center;
-            padding: 40px 20px;
+
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(circle at 20% 30%, #153c80 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, #481c75 0%, transparent 30%),
+                #070b18;
         }
 
-        .conteudo {
-            max-width: 850px;
+        .hero-content {
+            max-width: 900px;
         }
 
-        .icone {
-            font-size: 70px;
-            margin-bottom: 15px;
+        .robot {
+            font-size: 90px;
             animation: flutuar 3s infinite ease-in-out;
         }
 
         @keyframes flutuar {
+
             0% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-18px);
             }
 
             100% {
@@ -86,175 +103,774 @@
             }
         }
 
-        h1 {
-            font-size: 50px;
+        .hero h1 {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #55aaff;
+        }
+
+        .hero p {
+            color: #c5d2e8;
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            border-radius: 12px;
+
+            background: linear-gradient(135deg, #0066ff, #8a2be2);
+
+            color: white;
+            text-decoration: none;
+
+            font-weight: bold;
+
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.5);
+
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: translateY(-5px) scale(1.04);
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.8);
+        }
+
+        /* SEÇÕES */
+
+        section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 80px auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h2 {
+            font-size: 34px;
+            color: #55aaff;
+        }
+
+        .titulo p {
+            color: #aebbd0;
+            margin-top: 10px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #111a31, #0b1022);
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid #26365f;
+
+            transition: 0.35s;
+
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            border-color: #55aaff;
+
+            box-shadow:
+                0 15px 40px rgba(0, 102, 255, 0.2);
+        }
+
+        .card:active {
+            transform: scale(0.97);
+        }
+
+        .card .icone {
+            font-size: 45px;
             margin-bottom: 15px;
         }
 
-        h1 span {
-            color: #4da6ff;
+        .card h3 {
+            color: #55aaff;
+            margin-bottom: 15px;
         }
 
-        .subtitulo {
-            font-size: 22px;
-            color: #d7e6ff;
-            margin-bottom: 20px;
+        .card p {
+            color: #c5cede;
         }
 
-        .descricao {
-            font-size: 17px;
-            color: #b9c7dc;
-            line-height: 1.7;
-            margin-bottom: 35px;
+        /* IMAGEM */
+
+        .imagem {
+            width: 100%;
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            margin-bottom: 30px;
+
+            border: 1px solid #26365f;
+
+            transition: 0.4s;
         }
 
-        /* BOTÃO */
-        .botao-ia {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 17px 28px;
-            background: linear-gradient(135deg, #0066ff, #8a2be2);
+        .imagem:hover {
+            transform: scale(1.02);
+        }
+
+        /* ALERTA */
+
+        .alerta {
+            padding: 25px;
+
+            background: linear-gradient(135deg, #28152e, #14172c);
+
+            border-left: 5px solid #a855f7;
+
+            border-radius: 12px;
+
+            margin-top: 30px;
+        }
+
+        .alerta strong {
+            color: #c084fc;
+        }
+
+        /* QUIZ */
+
+        .quiz {
+            background: linear-gradient(145deg, #111a31, #0b1022);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #26365f;
+        }
+
+        .quiz h3 {
+            color: #55aaff;
+            margin-bottom: 15px;
+        }
+
+        .pergunta {
+            margin-top: 30px;
+            padding-top: 25px;
+
+            border-top: 1px solid #26365f;
+        }
+
+        .opcao {
+            display: block;
+
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 14px;
+
+            background: #18233e;
+
+            border: 1px solid #30456f;
+
+            border-radius: 10px;
+
             color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 102, 255, 0.4);
-            transition: 0.3s ease;
-        }
 
-        .botao-ia:hover {
-            transform: translateY(-6px) scale(1.04);
-            box-shadow: 0 0 40px rgba(80, 120, 255, 0.7);
-        }
+            cursor: pointer;
 
-        .botao-ia .emoji {
-            font-size: 35px;
-        }
-
-        .texto-botao {
-            display: flex;
-            flex-direction: column;
             text-align: left;
+
+            transition: 0.25s;
         }
 
-        .texto-botao strong {
-            font-size: 18px;
-            letter-spacing: 1px;
+        .opcao:hover {
+            background: #21355e;
+            transform: translateX(5px);
         }
 
-        .texto-botao small {
-            font-size: 13px;
-            margin-top: 4px;
-            color: #dce8ff;
+        .resultado {
+            margin-top: 30px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            background: #101a30;
+
+            color: #8fc7ff;
+
+            font-size: 20px;
+        }
+
+        /* VOLTAR */
+
+        .voltar {
+            text-align: center;
+            margin: 60px 0;
         }
 
         /* RODAPÉ */
+
         footer {
+            background: #040711;
+
+            padding: 25px;
+
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            color: #aebbd0;
-            font-size: 14px;
+
+            color: #8290a8;
+
+            border-top: 1px solid #202d4c;
         }
 
         /* CELULAR */
-        @media (max-width: 600px) {
+
+        @media (max-width: 700px) {
 
             nav {
-                padding: 18px 20px;
+                padding: 15px 20px;
             }
 
             nav a {
                 margin-left: 10px;
+                font-size: 13px;
             }
 
-            h1 {
-                font-size: 36px;
+            .hero h1 {
+                font-size: 34px;
             }
 
-            .subtitulo {
-                font-size: 19px;
+            .hero p {
+                font-size: 16px;
             }
 
-            .descricao {
-                font-size: 15px;
+            .robot {
+                font-size: 65px;
+            }
+
+            section {
+                margin: 55px auto;
+            }
+
+            .quiz {
+                padding: 22px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
     <!-- MENU -->
+
     <nav>
 
         <div class="logo">
-            Meu Site
+            🤖 IA & FAKE NEWS
         </div>
 
         <div>
-            <a href="#">Início</a>
-            <a href="ia-fake-news.html">IA e Fake News</a>
+            <a href="#inicio">Início</a>
+            <a href="#impacto">Impacto</a>
+            <a href="#combate">Combate</a>
+            <a href="#quiz">Quiz</a>
         </div>
 
     </nav>
 
 
-    <!-- PARTE PRINCIPAL -->
-    <main class="principal">
+    <!-- CAPA -->
 
-        <div class="conteudo">
+    <div class="hero" id="inicio">
 
-            <div class="icone">
+        <div class="hero-content">
+
+            <div class="robot">
                 🤖
             </div>
 
             <h1>
-                Bem-vindo ao <span>meu site!</span>
+                A IA é capaz de detectar
+                <span>Fake News?</span>
             </h1>
 
-            <p class="subtitulo">
-                Tecnologia, inteligência artificial e informação
+            <p>
+                Descubra como a inteligência artificial pode ser usada
+                para criar conteúdos falsos e também para ajudar a
+                combater a desinformação na internet.
             </p>
 
-            <p class="descricao">
-                Descubra como a inteligência artificial está mudando a
-                internet e entenda como ela pode ser usada tanto para
-                criar conteúdos falsos quanto para ajudar a combater
-                as Fake News.
-            </p>
-
-
-            <!-- BOTÃO PARA O SITE DE IA -->
-            <a href="ia-fake-news.html" class="botao-ia">
-
-                <span class="emoji">🤖</span>
-
-                <div class="texto-botao">
-
-                    <strong>IA & FAKE NEWS</strong>
-
-                    <small>
-                        Clique para entrar no site →
-                    </small>
-
-                </div>
-
+            <a href="#conteudo" class="botao">
+                🚀 Explorar o tema
             </a>
 
         </div>
 
-    </main>
+    </div>
+
+
+    <!-- INTRODUÇÃO -->
+
+    <section id="conteudo">
+
+        <div class="titulo">
+
+            <h2>🧠 Inteligência Artificial e Fake News</h2>
+
+            <p>
+                Tecnologia que pode ser usada para criar e combater
+                a desinformação.
+            </p>
+
+        </div>
+
+        <img
+            class="imagem"
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
+            alt="Representação de inteligência artificial"
+        >
+
+        <div class="card">
+
+            <h3>O que está acontecendo?</h3>
+
+            <p>
+                A inteligência artificial está presente em várias áreas
+                da nossa vida. Ela consegue analisar informações,
+                produzir textos, criar imagens e realizar tarefas
+                rapidamente.
+            </p>
+
+            <p>
+                Porém, essa tecnologia também pode ser utilizada para
+                criar conteúdos falsos muito realistas. Por isso,
+                precisamos aprender a identificar informações
+                duvidosas e verificar suas fontes.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPACTO -->
+
+    <section id="impacto">
+
+        <div class="titulo">
+
+            <h2>1. Qual é o impacto das IAs na geração de conteúdos falsos?</h2>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icone">📝</div>
+
+                <h3>Textos falsos</h3>
+
+                <p>
+                    A IA consegue produzir textos rapidamente,
+                    podendo ser utilizada para criar informações
+                    falsas que parecem notícias verdadeiras.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icone">🎭</div>
+
+                <h3>Imagens manipuladas</h3>
+
+                <p>
+                    Ferramentas de IA podem criar ou modificar imagens,
+                    fazendo pessoas ou situações aparecerem de uma
+                    maneira que nunca aconteceu.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icone">🎥</div>
+
+                <h3>Vídeos e áudios</h3>
+
+                <p>
+                    Também é possível criar vídeos e áudios falsos
+                    muito convincentes. Isso pode dificultar a
+                    identificação daquilo que é verdadeiro.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="alerta">
+
+            <strong>⚠️ Por que isso é preocupante?</strong>
+
+            <p>
+                Conteúdos falsos podem se espalhar rapidamente pelas
+                redes sociais. Quando muitas pessoas compartilham
+                uma informação sem verificar sua origem, fica mais
+                difícil distinguir o que é verdadeiro do que é falso.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMBATE -->
+
+    <section id="combate">
+
+        <div class="titulo">
+
+            <h2>2. Como as IAs podem combater conteúdos falsos?</h2>
+
+            <p>
+                A mesma tecnologia também pode ajudar a encontrar
+                informações suspeitas.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icone">🔎</div>
+
+                <h3>Análise de informações</h3>
+
+                <p>
+                    Sistemas de IA podem analisar grandes quantidades
+                    de informações e procurar padrões que indiquem
+                    possíveis conteúdos enganosos.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icone">🌐</div>
+
+                <h3>Comparação de fontes</h3>
+
+                <p>
+                    A tecnologia pode ajudar a comparar informações
+                    e encontrar diferenças entre uma publicação e
+                    fontes consideradas confiáveis.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icone">🛡️</div>
+
+                <h3>Proteção dos usuários</h3>
+
+                <p>
+                    Plataformas podem utilizar sistemas automáticos
+                    para identificar conteúdos suspeitos e ajudar
+                    os usuários a tomar mais cuidado antes de
+                    compartilhar uma informação.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAKE NEWS -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>3. O que são Fake News?</h2>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icone">
+                🚨
+            </div>
+
+            <h3>Fake News</h3>
+
+            <p>
+                Fake News são informações falsas ou enganosas
+                apresentadas como se fossem verdadeiras.
+            </p>
+
+            <p>
+                Elas podem aparecer em forma de textos, imagens,
+                vídeos, áudios ou publicações nas redes sociais.
+                Algumas são criadas com a intenção de enganar,
+                enquanto outras podem ser compartilhadas por
+                pessoas que não perceberam que a informação era falsa.
+            </p>
+
+            <p>
+                Para evitar esse problema, é importante verificar
+                quem publicou a informação, observar a data,
+                procurar outras fontes e desconfiar de conteúdos
+                que não apresentam provas ou fontes confiáveis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSÃO -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>💡 Conclusão</h2>
+
+        </div>
+
+        <div class="card">
+
+            <p>
+                A inteligência artificial pode ser utilizada tanto
+                para criar conteúdos falsos quanto para ajudar a
+                identificá-los.
+            </p>
+
+            <p>
+                Por isso, a tecnologia pode ser uma grande aliada
+                no combate às Fake News, mas não deve substituir
+                a atenção das pessoas.
+            </p>
+
+            <p>
+                Antes de compartilhar uma notícia, devemos pesquisar,
+                verificar a fonte e comparar as informações.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section id="quiz">
+
+        <div class="titulo">
+
+            <h2>🎯 Teste seus conhecimentos</h2>
+
+            <p>
+                Agora veja se você aprendeu sobre IA e Fake News!
+            </p>
+
+        </div>
+
+        <div class="quiz">
+
+            <h3>Quiz sobre IA e Fake News</h3>
+
+            <div class="pergunta">
+
+                <p>
+                    <strong>1. Qual é um dos impactos da IA na criação de Fake News?</strong>
+                </p>
+
+                <button class="opcao" onclick="responder(1, false)">
+                    A) Ela impede qualquer pessoa de criar conteúdo.
+                </button>
+
+                <button class="opcao" onclick="responder(1, true)">
+                    B) Ela pode facilitar a criação de textos, imagens, vídeos e áudios falsos.
+                </button>
+
+                <button class="opcao" onclick="responder(1, false)">
+                    C) Ela elimina todas as notícias falsas da internet.
+                </button>
+
+                <button class="opcao" onclick="responder(1, false)">
+                    D) Ela impede o compartilhamento nas redes sociais.
+                </button>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <p>
+                    <strong>2. Como a IA pode ajudar no combate às Fake News?</strong>
+                </p>
+
+                <button class="opcao" onclick="responder(2, false)">
+                    A) Criando mais notícias falsas.
+                </button>
+
+                <button class="opcao" onclick="responder(2, true)">
+                    B) Analisando informações e procurando sinais de conteúdo suspeito.
+                </button>
+
+                <button class="opcao" onclick="responder(2, false)">
+                    C) Compartilhando todas as notícias automaticamente.
+                </button>
+
+                <button class="opcao" onclick="responder(2, false)">
+                    D) Impedindo as pessoas de pesquisar na internet.
+                </button>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <p>
+                    <strong>3. O que são Fake News?</strong>
+                </p>
+
+                <button class="opcao" onclick="responder(3, true)">
+                    A) Informações falsas ou enganosas apresentadas como verdadeiras.
+                </button>
+
+                <button class="opcao" onclick="responder(3, false)">
+                    B) Notícias publicadas somente por jornais.
+                </button>
+
+                <button class="opcao" onclick="responder(3, false)">
+                    C) Informações que sempre foram verificadas.
+                </button>
+
+                <button class="opcao" onclick="responder(3, false)">
+                    D) Notícias sobre tecnologia.
+                </button>
+
+            </div>
+
+
+            <div class="resultado" id="resultado">
+
+                Responda às perguntas para descobrir sua pontuação!
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLTAR -->
+
+    <div class="voltar">
+
+        <a href="index.html" class="botao">
+            ← Voltar para o início
+        </a>
+
+    </div>
 
 
     <!-- RODAPÉ -->
+
     <footer>
 
         <p>
-            Projeto escolar — Tecnologia e Inteligência Artificial
+            Projeto escolar — Inteligência Artificial e Fake News
         </p>
 
     </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let pontos = 0;
+        let respondidas = [];
+
+        function responder(pergunta, correta) {
+
+            if (respondidas.includes(pergunta)) {
+                return;
+            }
+
+            respondidas.push(pergunta);
+
+            if (correta) {
+                pontos++;
+            }
+
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                "Você acertou " + pontos +
+                " de " + respondidas.length + " pergunta(s)!";
+
+            if (respondidas.length === 3) {
+
+                if (pontos === 3) {
+
+                    resultado.innerHTML =
+                        "🏆 Parabéns! Você acertou 3 de 3!";
+
+                } else if (pontos === 2) {
+
+                    resultado.innerHTML =
+                        "👏 Muito bom! Você acertou 2 de 3!";
+
+                } else if (pontos === 1) {
+
+                    resultado.innerHTML =
+                        "🙂 Você acertou 1 de 3. Que tal estudar mais um pouco?";
+
+                } else {
+
+                    resultado.innerHTML =
+                        "📚 Você não acertou nenhuma. Revise o conteúdo e tente novamente!";
+
+                }
+
+            }
+
+        }
+
+    </script>
 
 </body>
 
