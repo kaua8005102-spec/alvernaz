@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Semana das Crianças</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e50922;
+        }
+
+        header h2 {
+            font-size: 28px;
+            font-style: italic;
+            letter-spacing: 3px;
+        }
+
+        header h2 span {
+            color: #e50922;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e50922;
+        }
+
+        .inicio {
+            min-height: 450px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, #050505, #050505bb),
+                url("capa.png") center/cover;
+            border-bottom: 3px solid #e50922;
+        }
+
+        .inicio h1 {
+            font-size: clamp(38px, 7vw, 70px);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .inicio h1 span {
+            color: #e50922;
+            text-shadow: 0 0 20px #e5092288;
+        }
+
+        .inicio p {
+            max-width: 600px;
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 24px;
+            background: #e50922;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 25px #e50922;
+        }
+
+        main {
+            width: 85%;
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+
+        .titulo {
+            font-size: 35px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .titulo span {
+            color: #e50922;
+        }
+
+        .descricao {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .cartoes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .cartao {
+            background: linear-gradient(135deg, #171717, #090909);
+            padding: 30px;
+            border: 1px solid #333;
+            border-left: 5px solid #e50922;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .cartao:hover {
+            transform: translateY(-8px);
+            border-color: #e50922;
+            box-shadow: 0 0 20px #e5092225;
+        }
+
+        .numero {
+            color: #e50922;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .cartao h3 {
+            font-size: 25px;
+            margin: 15px 0;
+        }
+
+        .cartao p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .icone {
+            font-size: 35px;
+        }
+
+        .frase {
+            text-align: center;
+            padding: 45px 15px;
+            margin-top: 50px;
+            border-top: 1px solid #444;
+            border-bottom: 1px solid #444;
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .frase span {
+            color: #e50922;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+            background: #111;
+            border-top: 2px solid #e50922;
+        }
+
+        footer span {
+            color: #e50922;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .inicio {
+                padding: 70px 7%;
+            }
+
+            .cartoes {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>BLEACH<span>.</span></h2>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#semana">Minha semana</a>
+        <a href="#final">Conclusão</a>
+    </nav>
+</header>
+
+<section class="inicio" id="inicio">
+    <div>
+        <p>DIÁRIO DE AVENTURA • SEMANA DAS CRIANÇAS</p>
+
+        <h1>Minha semana<br>das <span>crianças</span></h1>
+
+        <p>
+            Uma semana do meu jeito! Fiquei em casa,
+            fui à Lagoa Silvana, joguei Roblox e caminhei
+            pela roça. Foram momentos simples, mas
+            que fizeram parte da minha semana.
+        </p>
+
+        <a href="#semana" class="botao">
+            VER MINHAS AVENTURAS ↓
+        </a>
+    </div>
+</section>
+
+<main id="semana">
+
+    <h2 class="titulo">Meu arco de <span>aventuras</span></h2>
+
+    <p class="descricao">
+        Confira como foi minha Semana das Crianças!
+    </p>
+
+    <section class="cartoes">
+
+        <article class="cartao">
+            <div class="icone">🏠</div>
+            <span class="numero">01 / DESCANSO</span>
+            <h3>Fiquei em casa</h3>
+
+            <p>
+                Durante a semana, fiquei em casa e aproveitei
+                meu tempo livre para descansar e fazer coisas
+                de que gosto. Foi um momento para relaxar
+                e curtir a tranquilidade.
+            </p>
+        </article>
+
+        <article class="cartao">
+            <div class="icone">🌅</div>
+            <span class="numero">02 / PASSEIO</span>
+            <h3>Lagoa Silvana</h3>
+
+            <p>
+                Também fui à Lagoa Silvana e aproveitei
+                o passeio. Foi uma oportunidade de sair
+                da rotina, apreciar a paisagem e curtir
+                um lugar diferente.
+            </p>
+        </article>
+
+        <article class="cartao">
+            <div class="icone">🎮</div>
+            <span class="numero">03 / GAME ON</span>
+            <h3>Joguei Roblox</h3>
+
+            <p>
+                Separei um tempo para jogar Roblox,
+                explorar jogos e me divertir. Foi uma
+                das maneiras de aproveitar meu tempo
+                livre durante a Semana das Crianças.
+            </p>
+        </article>
+
+        <article class="cartao">
+            <div class="icone">🌳</div>
+            <span class="numero">04 / NATUREZA</span>
+            <h3>Caminhei pela roça</h3>
+
+            <p>
+                Também caminhei pela roça e aproveitei
+                o contato com a natureza. Foi bom andar
+                ao ar livre, observar a paisagem e curtir
+                a tranquilidade do campo.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="frase" id="final">
+        No fim, foi uma semana simples,
+        <span>divertida</span> e cheia de lembranças!
+        <br>
+        <small>Esse foi o meu jeito de aproveitar.</small>
+    </section>
+
+</main>
+
+<footer>
+    <p>Minha Semana das Crianças | Feito por <span>Kauã</span></p>
+    <p>Inspirado no universo de Bleach ⚔️</p>
+</footer>
+
+</body>
+</html>
