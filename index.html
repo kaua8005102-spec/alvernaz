@@ -1,24 +1,108 @@
-<a href="iacapaz.html">IA & FAKE NEWS</a>
-<a href="transito.html" class="btn-transito">
-    🚦 Entrar no site
-</a>
 
-<style>
-    .btn-transito {
-        display: inline-block;
-        padding: 15px 30px;
-        background: linear-gradient(135deg, #36d9ff, #54e39a);
-        color: #06101c;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 14px;
-        transition: 0.3s ease;
-        box-shadow: 0 8px 25px rgba(54, 217, 255, 0.25);
-    }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Sites</title>
 
-    .btn-transito:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(54, 217, 255, 0.4);
-    }
-</style>
+    <style>
+        body {
+            background: #06101c;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 35px;
+            font-size: 32px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            color: #06101c;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 14px;
+            transition: 0.3s ease;
+            box-shadow: 0 8px 25px rgba(54, 217, 255, 0.25);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(54, 217, 255, 0.4);
+        }
+
+        .btn-ia {
+            background: linear-gradient(135deg, #a855f7, #36d9ff);
+        }
+
+        .btn-transito {
+            background: linear-gradient(135deg, #36d9ff, #54e39a);
+        }
+
+        .btn-enem {
+            background: linear-gradient(135deg, #07539b, #07977e);
+            color: white;
+        }
+
+        footer {
+            color: #94a3b8;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .botoes {
+                flex-direction: column;
+                width: 80%;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🚀 Meus Projetos</h1>
+
+    <div class="botoes">
+
+        <a href="iacapaz.html" class="btn btn-ia">
+            🤖 IA & FAKE NEWS
+        </a>
+
+        <a href="transito.html" class="btn btn-transito">
+            🚦 Entrar no site
+        </a>
+
+        <a href="enem.html" class="btn btn-enem">
+            🎓 Importância do ENEM
+        </a>
+
+    </div>
+
+    <footer>
+        <p>Todos os direitos reservados © 2026</p>
+    </footer>
+
+</body>
+</html>
