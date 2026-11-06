@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENEM - Seu Futuro Começa Aqui</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(120deg, #063b73, #087c70);
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #052e55;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #52e0b4;
+        }
+
+        .inicio {
+            min-height: 420px;
+            padding: 90px 10%;
+            text-align: center;
+            color: white;
+            background: linear-gradient(120deg, #07539b, #07977e);
+        }
+
+        .inicio h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 28px;
+            background: #ffffff;
+            color: #07539b;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.08);
+            background: #52e0b4;
+            color: #063b73;
+        }
+
+        section {
+            padding: 65px 10%;
+            scroll-margin-top: 60px;
+        }
+
+        section h2 {
+            color: #07539b;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        section p {
+            line-height: 1.8;
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px #00000012;
+            transition: 0.3s;
+            border-bottom: 4px solid #07977e;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px #00000020;
+        }
+
+        .card h3 {
+            color: #087c70;
+            margin-bottom: 15px;
+        }
+
+        .destaque {
+            background: #e0f2fe;
+        }
+
+        .dicas {
+            background: #ffffff;
+        }
+
+        .quiz {
+            background: #e0f2fe;
+            text-align: center;
+        }
+
+        .pergunta {
+            background: white;
+            padding: 25px;
+            max-width: 650px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #00000012;
+        }
+
+        .pergunta p {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .pergunta button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #07539b;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .pergunta button:hover {
+            background: #07977e;
+            transform: scale(1.02);
+        }
+
+        #resultado {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #07539b;
+        }
+
+        footer {
+            background: #052e55;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .inicio h2 {
+                font-size: 30px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 ENEM</h1>
+    <p>Seu futuro começa com uma oportunidade!</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#importancia">Importância</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#dicas">Dicas</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<div class="inicio" id="inicio">
+    <h2>O ENEM pode transformar seu futuro!</h2>
+    <p>
+        O Exame Nacional do Ensino Médio é uma das principais portas de entrada
+        para o ensino superior no Brasil. Ele oferece oportunidades para quem
+        deseja estudar, conquistar uma profissão e realizar seus sonhos.
+    </p>
+    <a href="#importancia" class="botao">Descubra sua importância</a>
+</div>
+
+<section id="importancia">
+    <h2>Qual é a importância do ENEM?</h2>
+    <p>
+        O ENEM é muito importante porque permite que milhares de estudantes
+        tenham a oportunidade de entrar em universidades e faculdades.
+        Além disso, a prova avalia os conhecimentos adquiridos durante o
+        ensino médio e ajuda os alunos a se prepararem para o futuro.
+        Com uma boa nota, é possível conseguir oportunidades de estudo
+        e bolsas de ensino.
+    </p>
+</section>
+
+<section class="destaque" id="beneficios">
+    <h2>Principais benefícios do ENEM</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🏫 Universidades</h3>
+            <p>Permite concorrer a vagas em diversas universidades públicas e privadas.</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Bolsas de estudo</h3>
+            <p>Possibilita conseguir bolsas de estudo pelo programa ProUni.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Conhecimento</h3>
+            <p>Ajuda a desenvolver o raciocínio, a interpretação e o conhecimento.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Futuro profissional</h3>
+            <p>Abre caminhos para a formação acadêmica e novas oportunidades de carreira.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Como funciona o ENEM?</h2>
+    <p>
+        O exame é realizado em dois dias e possui questões de múltipla escolha
+        e uma redação. As provas envolvem quatro áreas do conhecimento:
+        Linguagens, Ciências Humanas, Ciências da Natureza e Matemática.
+        A redação também é muito importante, pois avalia a capacidade
+        de argumentação e escrita do estudante.
+    </p>
+</section>
+
+<section class="dicas" id="dicas">
+    <h2>Como se preparar para o ENEM?</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>📅 Organize seus estudos</h3>
+            <p>Crie um horário de estudos e distribua as matérias durante a semana.</p>
+        </div>
+
+        <div class="card">
+            <h3>📝 Faça simulados</h3>
+            <p>Resolva provas anteriores para conhecer o estilo das questões.</p>
+        </div>
+
+        <div class="card">
+            <h3>✍️ Treine redação</h3>
+            <p>Pratique a escrita e aprenda a organizar seus argumentos.</p>
+        </div>
+
+        <div class="card">
+            <h3>💪 Não desista</h3>
+            <p>Tenha dedicação, mantenha a calma e acredite no seu potencial.</p>
+        </div>
+    </div>
+</section>
+
+<section class="quiz" id="quiz">
+    <h2>🎯 Teste seus conhecimentos!</h2>
+    <p style="text-align:center">
+        Responda às perguntas e veja o quanto você aprendeu sobre o ENEM.
+    </p>
+
+    <div class="pergunta">
+        <p>1. O que significa a sigla ENEM?</p>
+        <button onclick="responder(this, false)">Exame Nacional de Estudos Municipais</button>
+        <button onclick="responder(this, true)">Exame Nacional do Ensino Médio</button>
+        <button onclick="responder(this, false)">Exame Nacional de Educação Moderna</button>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Qual programa utiliza a nota do ENEM para oferecer bolsas de estudo?</p>
+        <button onclick="responder(this, false)">FGTS</button>
+        <button onclick="responder(this, true)">ProUni</button>
+        <button onclick="responder(this, false)">IPVA</button>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O ENEM possui qual tipo de prova escrita?</p>
+        <button onclick="responder(this, true)">Redação</button>
+        <button onclick="responder(this, false)">Ditado</button>
+        <button onclick="responder(this, false)">Desenho livre</button>
+    </div>
+
+    <div id="resultado">Acertos: 0 de 3</div>
+</section>
+
+<footer>
+    <p>🎓 Acredite nos seus sonhos e construa seu futuro!</p>
+    <p>Site educativo sobre a importância do ENEM.</p>
+</footer>
+
+<script>
+    let acertos = 0;
+    let respondidas = 0;
+
+    function responder(botao, correta) {
+        const pergunta = botao.parentElement;
+
+        if (pergunta.dataset.respondida === "sim") {
+            return;
+        }
+
+        pergunta.dataset.respondida = "sim";
+        respondidas++;
+
+        if (correta) {
+            acertos++;
+            botao.style.background = "#159447";
+        } else {
+            botao.style.background = "#dc3545";
+        }
+
+        const botoes = pergunta.querySelectorAll("button");
+        botoes.forEach(b => b.disabled = true);
+
+        document.getElementById("resultado").innerText =
+            "Acertos: " + acertos + " de 3";
+
+        if (respondidas === 3) {
+            document.getElementById("resultado").innerText +=
+                " | " + (acertos === 3
+                ? "Parabéns! Você acertou tudo! 🎉"
+                : "Muito bem! Continue estudando! 💪");
+        }
+    }
+</script>
+
+</body>
+</html>
