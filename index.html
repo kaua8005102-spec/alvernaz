@@ -4,47 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Sites</title>
+
+    <title>Meus Projetos</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: #06101c;
+            background: linear-gradient(135deg, #06101c, #102b43);
             font-family: Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            flex-direction: column;
+            padding: 30px;
         }
 
         h1 {
             color: white;
-            margin-bottom: 35px;
-            font-size: 32px;
+            font-size: 38px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .descricao {
+            color: #b8c9d9;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 17px;
         }
 
         .botoes {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
+            width: 100%;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 18px 30px;
+            min-width: 220px;
+            text-align: center;
             color: #06101c;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
             border-radius: 14px;
             transition: 0.3s ease;
-            box-shadow: 0 8px 25px rgba(54, 217, 255, 0.25);
+            box-shadow: 0 8px 25px rgba(54, 217, 255, 0.2);
         }
 
         .btn:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-6px) scale(1.04);
             box-shadow: 0 12px 30px rgba(54, 217, 255, 0.4);
         }
 
@@ -63,18 +81,23 @@
 
         footer {
             color: #94a3b8;
-            margin-top: 50px;
+            margin-top: 60px;
             text-align: center;
         }
 
         @media (max-width: 600px) {
+            h1 {
+                font-size: 29px;
+            }
+
             .botoes {
                 flex-direction: column;
-                width: 80%;
+                align-items: center;
             }
 
             .btn {
-                text-align: center;
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -84,18 +107,22 @@
 
     <h1>🚀 Meus Projetos</h1>
 
+    <p class="descricao">
+        Escolha um dos sites abaixo para acessar:
+    </p>
+
     <div class="botoes">
 
-        <a href="iacapaz.html" class="btn btn-ia">
+        <a href="./iacapaz.html" class="btn btn-ia">
             🤖 IA & FAKE NEWS
         </a>
 
-        <a href="transito.html" class="btn btn-transito">
-            🚦 Entrar no site
+        <a href="./transito.html" class="btn btn-transito">
+            🚦 SITE DE TRÂNSITO
         </a>
 
-        <a href="enem.html" class="btn btn-enem">
-            🎓 Importância do ENEM
+        <a href="./enem.html" class="btn btn-enem">
+            🎓 IMPORTÂNCIA DO ENEM
         </a>
 
     </div>
